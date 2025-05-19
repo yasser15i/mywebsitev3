@@ -1,0 +1,62 @@
+{
+  "siteName": "Yasser ALshareef",
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "achievements": "Achievements",
+    "certificates": "Certificates",
+    "participations": "Participations",
+    "downloadCV": "Download CV"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "tagline": "Developer & Designer",
+    "description": "I create stunning digital experiences that connect with users and achieve business goals.",
+    "cta": "View My Work"
+  },
+  "about": {
+    "title": "About Me",
+"description": "👋 I'm Yasser Alshareef, a fresh IT graduate 🎓, passionate developer 👨‍💻, designer 🎨, and tech lover ⚙️.\n\n🏆 I’ve won 10+ hackathons and earned 4+ awards in tech and innovation. I'm also the founder of a tech startup, focused on creative digital solutions.\n\n💡 I blend technical skills and creativity to build user-friendly experiences — from frontend interfaces 🎯, to backend systems 🔧, and mobile apps 📱."
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "Here are some of the projects I've worked on. Each one represents a unique challenge and solution.",
+    "viewAll": "View All Projects",
+    "categories": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "design": "Design"
+    }
+  },
+  "achievements": {
+    "title": "Achievements",
+    "description": "A collection of my professional achievements and recognition."
+  },
+  "certificates": {
+    "title": "Certificates",
+    "description": "Professional certifications and educational accomplishments."
+  },
+  "participations": {
+    "title": "Participations",
+    "description": "Events, conferences, and collaborations I've been part of."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Interested in working together? Reach out to me.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submitButton": "Send Message"
+  },
+  "footer": {
+    "copyright": "© 2025 Yasser ALshareef. All rights reserved."
+  },
+  "toggles": {
+    "language": "العربية",
+    "theme": {
+      "light": "Light Mode",
+      "dark": "Dark Mode"
+    }
+  }
+}

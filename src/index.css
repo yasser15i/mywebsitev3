@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'IBM Plex Arabic', 'Poppins', system-ui, sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* تعيين الخطوط حسب اللغة */
+  :lang(ar) {
+    font-family: 'IBM Plex Arabic', system-ui, sans-serif;
+  }
+  
+  :lang(en) {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  
+  /* توحيد شكل جميع العناصر عند التركيز عليها */
+  a:focus, button:focus, input:focus, textarea:focus, select:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-1 ring-offset-slate-900;
+  }
+}
+
+/* قواعد تجاوبية للخطوط والهوامش */
+@layer components {
+  .responsive-container {
+    @apply px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto;
+  }
+  
+  .responsive-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold;
+  }
+  
+  .responsive-text {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .responsive-padding {
+    @apply py-4 sm:py-6 md:py-8 lg:py-10;
+  }
+  
+  /* مكونات متكررة يمكن إعادة استخدامها */
+  .card {
+    @apply bg-slate-700 rounded-lg p-6 hover:shadow-lg transition-all;
+  }
+  
+  .badge {
+    @apply px-3 py-1 text-sm rounded-full;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-lg transition-colors font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-blue-600 text-blue-400 hover:bg-blue-600/10;
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+}
+
+/* تصحيحات لمشاكل عرض عناصر الإدخال على الأجهزة المختلفة */
+input, 
+textarea, 
+select, 
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  font-size: 16px; /* منع التكبير التلقائي على iOS */
+}
+
+/* تحسين العرض على الأجهزة المختلفة */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* منع المشاكل البصرية المزعجة على الأجهزة التي تفضل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* تحسين التناسق في العناصر المرنة عند تغيير اللغة */
+[dir="rtl"] .flex {
+  --gap-x-reverse: 1;
+}
+
+[dir="rtl"] .space-x-4 {
+  --space-x-reverse: 1;
+}
+
+/* تحسين عرض تحول اللغة */
+.language-transition {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+html[dir="rtl"] .language-transition {
+  transform: translateX(1rem);
+}
+
+html[dir="ltr"] .language-transition {
+  transform: translateX(-1rem);
+}
+
+/* تحسين عرض العناصر المطلقة */
+[dir="rtl"] .right-4 {
+  right: 1rem; /* دائمًا على اليمين */
+  left: unset;
+}
+
+[dir="ltr"] .right-4 {
+  right: 1rem; /* دائمًا على اليمين */
+  left: unset;
+}
+
+/* تصحيح ترتيب الأزرار والعناصر المتجاورة في القائمة العلوية */
+.navbar-controls {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* إضافة كلاس لتثبيت العناصر على اليمين بغض النظر عن اتجاه اللغة */
+.fixed-right {
+  right: 1rem !important;
+  left: auto !important;
+}
+
+/* إصلاح تنسيق أزرار التحكم في القائمة العلوية */
+.nav-controls {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 4rem; /* 16 × 0.25 rem = 4 rem */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+/* تعديل نمط العناصر المثبتة في اليمين للأجهزة المحمولة */
+[dir="rtl"] .mobile-fixed-right {
+  right: 1rem !important;
+  left: auto !important;
+}
+
+[dir="ltr"] .mobile-fixed-right {
+  right: 1rem !important;
+  left: auto !important;
+}
+
+/* إضافة تأثير الظل والتحويلات للأزرار */
+.control-button {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+}
+
+.control-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* تعويض تداخلات الـ flexbox عند تغيير الاتجاه */
+[dir="rtl"] .nav-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .logo-container {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .controls-container {
+  margin-right: auto;
+  margin-left: 0;
+}
